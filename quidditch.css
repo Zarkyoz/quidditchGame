@@ -1,0 +1,50 @@
+*{
+    cursor:url('image/cursorHarry.png'),auto;
+    /* l'image doit etre en 32px*32px et avoir la class cursor_img */
+
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    background-image: url(image/arrPlan.jpg);
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-position: bottom;
+    background-size: 100%;
+    /* border: solid red; */
+    width: 100%;
+    height: 95vh;
+}
+main{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+.partieG{
+    background-color: rgba(250, 250, 250, 0.5);
+    width: 100vh;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border: green;
+
+}
+h1{
+    text-align: center;
+    margin: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0;
+    border: solid gold;
+    font-size: 100px;
+    color:gold;
+}
+.vifdor{
+    position:relative;
+    opacity: 1;
+}
