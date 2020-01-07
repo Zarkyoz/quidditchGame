@@ -48,3 +48,11 @@ h1{
     position:relative;
     opacity: 1;
 }
+.score{
+    font-size: 60px;
+    color: red;
+}
+#pTime{
+    font-size: 60px;
+    color: green;
+}
