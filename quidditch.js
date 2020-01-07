@@ -16,11 +16,10 @@ var vifImg = document.createElement("div");
 vifImg.classList = "vifImg";
 affichage.appendChild(vifImg);
 
-var vif = new Image(100, 100);
+var vif = new Image(50, 50);
 vif.src = "image/vif.png";
-vif.classList = "vifdor";
 var scorediv = document.createElement('p');
-main.appendChild(scorediv)
+affichage.appendChild(scorediv)
 scorediv.classList = "score"
 
 
@@ -29,6 +28,7 @@ scorediv.classList = "score"
  * @param click  
  */
 btnStart.addEventListener("click", function start() {
+    vif.classList = "vifdor";
     var score = 0;
     affichage.removeChild(btnStart)
     affichage.appendChild(vif);
@@ -42,7 +42,7 @@ btnStart.addEventListener("click", function start() {
     divTimer.appendChild(pTimer);
     //a l'exterieur de la boucle, permet d'etre modifier par la suite 
     //avec un vif special, rajout de temps ...
-    var c = 7;
+    var c = 10;
     
     
     function clock() {
@@ -86,8 +86,8 @@ btnStart.addEventListener("click", function start() {
         function vifRandom(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
-        vif.style.left = vifX + "vh";
-        vif.style.top = vifY + "vh";
+        vif.style.left = vifX + "%";
+        vif.style.top = vifY + "%";
         affichage.appendChild(vif);
         
         console.log(vifX);

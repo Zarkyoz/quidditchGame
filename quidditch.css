@@ -26,7 +26,11 @@ main{
 
 }
 .partieG{
-    background-color: rgba(250, 250, 250, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    background-color: hsla(120, 42%, 51%, 0.4);
+    border-radius: 45%;
     width: 100vh;
     height: 80vh;
     display: flex;
@@ -45,14 +49,28 @@ h1{
     color:gold;
 }
 .vifdor{
-    position:relative;
+    position: absolute;
+    z-index: 1;
     opacity: 1;
 }
+
 .score{
-    font-size: 60px;
-    color: red;
+
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    font-size: 500px;
+    color: black;
+    /* border: solid green; */
+    opacity: 0.5;
 }
 #pTime{
-    font-size: 60px;
-    color: green;
+    margin-left: 50px;
+    position: absolute;
+    background: black;
+    font-size: 200px;
+    color: purple;
+}
+#btnStart{
+    z-index: 1;
 }
