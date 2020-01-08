@@ -1,52 +1,84 @@
 *{
     cursor:url('image/cursorHarry.png'),auto;
     /* l'image doit etre en 32px*32px et avoir la class cursor_img */
-
+    margin: 0;
+    padding: 0;
 }
 body{
     display: flex;
     flex-direction: column;
     background-color: black;
-    background-image: url(image/arrPlan.jpg);
-    background-repeat: no-repeat;
-    /* background-position: center; */
-    background-position: bottom;
-    background-size: 100%;
     /* border: solid red; */
     width: 100%;
     height: 95vh;
 }
+header{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+/* h1{
+    text-align: center;
+    margin: 0;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 0;
+    border: solid gold;
+    font-size: 80px;
+    color:gold;
+} */
+#logo{
+    margin-top: 20px;
+    margin-left: 50px;
+    padding-bottom: 0;
+}
+#timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: solid greenyellow; */
+    width: 150px;
+    height: 150px;
+    margin-right: 50px;
+}
+#pTime{
+    /* position: absolute; */
+    padding: 0;
+    margin: 0;
+    background: black;
+    font-size: 120px;
+    color: goldenrod;
+}
 main{
-    margin: 20px;
+    position: sticky;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-
+    background-image: url(image/arrPlan.jpg);
+    border-radius: 10%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    
 }
 .partieG{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    background-color: hsla(120, 42%, 51%, 0.4);
-    border-radius: 45%;
-    width: 100vh;
-    height: 80vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: hsla(120, 42%, 51%, 0.2);
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    border: green;
+    /* border: solid green; */
 
-}
-h1{
-    text-align: center;
-    margin: 0;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding: 0;
-    border: solid gold;
-    font-size: 100px;
-    color:gold;
 }
 .vifdor{
     position: absolute;
@@ -61,16 +93,35 @@ h1{
     position: absolute;
     font-size: 500px;
     color: black;
+    opacity: 0.6;
     /* border: solid green; */
-    opacity: 0.5;
-}
-#pTime{
-    margin-left: 50px;
-    position: absolute;
-    background: black;
-    font-size: 200px;
-    color: purple;
 }
 #btnStart{
     z-index: 1;
+}
+
+.divBoutonDemarrage{
+    z-index: 1;
+    position: absolute;
+    /* top: 100%;
+    left:100%; */
+    animation-duration: 4s;
+    animation-name: BoutonDemarrer;
+    animation-iteration-count: infinite;
+    /* border: solid red; */
+}
+
+@keyframes BoutonDemarrer {
+    0%{
+        opacity: 0.7;
+        top: 45%;
+    }
+    50%{
+        opacity: 1;
+        top: 30%;
+    }
+    100%{
+        opacity: 0.7;
+        top: 45%;
+    }
 }

@@ -1,22 +1,47 @@
 // VAR HTML recovery
-var main = document.querySelector("main");
 
 //VAR Build HTML
+var header = document.querySelector('header')
+var partieLogo = document.createElement('article')
+var partieMenu = document.createElement('article')
+var partieTemps = document.createElement('article')
+
+// var titre = document.createElement('h1')
+var titre = new Image (260,120)
+titre.src = "image/quidditchlogo.png"
+titre.id = "logo"
+header.appendChild(partieLogo)
+header.appendChild(partieMenu)
+// partieMenu.textContent = "youpie"
+// partieMenu.style.color = "red";
+header.appendChild(partieTemps)
+partieTemps.id = "timer"
+partieLogo.appendChild(titre)
+// titre.textContent="Quidditch"
+var main = document.querySelector("main");
 var affichage = document.createElement("article");
+main.appendChild(affichage)
 affichage.classList = "partieG";
-main.appendChild(affichage);
+
+// inserer l'image à cliquer du debut
+var div = document.createElement('div')
+affichage.appendChild(div);
+div.classList.add('divBoutonDemarrage')
+var btnStart = new Image(700, 200);
+btnStart.src = "image/vif2.png"
+div.appendChild(btnStart)
 
 
-var btnStart = document.createElement("button");
+
 btnStart.id = "btnStart";
 btnStart.textContent = "START";
-affichage.appendChild(btnStart);
 
 var vifImg = document.createElement("div");
 vifImg.classList = "vifImg";
 affichage.appendChild(vifImg);
-
-var vif = new Image(50, 50);
+var xx = 50;
+var yy = 50;
+var vif = new Image(xx, yy);
 vif.src = "image/vif.png";
 var scorediv = document.createElement('p');
 affichage.appendChild(scorediv)
@@ -30,12 +55,12 @@ scorediv.classList = "score"
 btnStart.addEventListener("click", function start() {
     vif.classList = "vifdor";
     var score = 0;
-    affichage.removeChild(btnStart)
-    affichage.appendChild(vif);
+    div.removeChild(btnStart)
+    main.appendChild(vif);
     scorediv.textContent = score
     var divTimer = document.createElement("div");
     divTimer.id = "divTimer";
-    main.appendChild(divTimer);
+    partieTemps.appendChild(divTimer);
     console.log("yo")
     var pTimer = document.createElement("p");
     pTimer.id = "pTime";
@@ -55,8 +80,8 @@ btnStart.addEventListener("click", function start() {
             pTimer.innerHTML = c;
             if (c == 0) {
                 clearInterval(myTimer);
-                affichage.appendChild(btnStart);
-                affichage.removeChild(vif);
+                div.appendChild(btnStart);
+                main.removeChild(vif);
                 //enlever le temps
                 divTimer.removeChild(pTimer)            
             }
@@ -75,9 +100,9 @@ btnStart.addEventListener("click", function start() {
      * @function vifo
      */
     function vifo() {
-        affichage.removeChild(vif);
+        main.removeChild(vif);
         var vifX = vifRandom(90);
-        var vifY = vifRandom(70);
+        var vifY = vifRandom(90);
         
         /**
          * @function vifRandom
@@ -88,7 +113,7 @@ btnStart.addEventListener("click", function start() {
         }
         vif.style.left = vifX + "%";
         vif.style.top = vifY + "%";
-        affichage.appendChild(vif);
+        main.appendChild(vif);
         
         console.log(vifX);
         console.log(vifY);
