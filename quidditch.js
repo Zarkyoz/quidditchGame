@@ -39,8 +39,8 @@ btnStart.textContent = "START";
 var vifImg = document.createElement("div");
 vifImg.classList = "vifImg";
 affichage.appendChild(vifImg);
-var xx = 50;
-var yy = 50;
+var xx = 150;
+var yy = 150;
 var vif = new Image(xx, yy);
 vif.src = "image/vif.png";
 var scorediv = document.createElement('p');
@@ -101,7 +101,8 @@ btnStart.addEventListener("click", function start() {
      */
     function vifo() {
         main.removeChild(vif);
-        var vifX = vifRandom(90);
+        var vifX = vifRandom(85);
+        //85 pour sur tablette sinon 90
         var vifY = vifRandom(90);
         
         /**
